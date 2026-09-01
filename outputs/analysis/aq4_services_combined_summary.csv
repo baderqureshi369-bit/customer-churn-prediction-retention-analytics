@@ -1,0 +1,16 @@
+Service_Variable,Service_Option,Total_Customers,Churned_Customers,Churn_Rate_Pct
+InternetService,Fiber optic,3096,1297,41.89
+OnlineSecurity,No,3498,1461,41.77
+TechSupport,No,3473,1446,41.64
+OnlineBackup,No,3088,1233,39.93
+DeviceProtection,No,3095,1211,39.13
+DeviceProtection,Yes,2422,545,22.5
+OnlineBackup,Yes,2429,523,21.53
+InternetService,DSL,2421,459,18.96
+TechSupport,Yes,2044,310,15.17
+OnlineSecurity,Yes,2019,295,14.61
+InternetService,No,1526,113,7.4
+OnlineSecurity,No internet service,1526,113,7.4
+OnlineBackup,No internet service,1526,113,7.4
+DeviceProtection,No internet service,1526,113,7.4
+TechSupport,No internet service,1526,113,7.4

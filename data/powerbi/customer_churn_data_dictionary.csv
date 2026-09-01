@@ -1,0 +1,33 @@
+Column_Name,Data_Type,Category,Description
+customerID,String,Customer Identifier,Unique alphanumeric identifier assigned to each telecommunications customer.
+gender,String,Demographics,"Customer gender classification (Female, Male)."
+SeniorCitizen,Integer,Demographics,"Binary indicator indicating if the customer is a senior citizen (1 = Yes, 0 = No)."
+Partner,String,Demographics,"Indicates whether the customer has a domestic partner or spouse (Yes, No)."
+Dependents,String,Demographics,"Indicates whether the customer lives with dependents or children (Yes, No)."
+tenure,Integer,Account Information,Total number of months the customer has stayed with the company.
+PhoneService,String,Service Information,"Indicates whether the customer subscribes to landline phone service (Yes, No)."
+MultipleLines,String,Service Information,"Indicates if the customer has multiple phone lines (Yes, No, No phone service)."
+InternetService,String,Service Information,"Customer internet service provider technology (DSL, Fiber optic, No)."
+OnlineSecurity,String,Service Information,"Indicates whether the customer subscribes to online security addon (Yes, No, No internet service)."
+OnlineBackup,String,Service Information,"Indicates whether the customer subscribes to cloud backup addon (Yes, No, No internet service)."
+DeviceProtection,String,Service Information,"Indicates whether the customer subscribes to device protection warranty (Yes, No, No internet service)."
+TechSupport,String,Service Information,"Indicates whether the customer subscribes to premium technical support (Yes, No, No internet service)."
+StreamingTV,String,Service Information,"Indicates whether the customer streams television via internet service (Yes, No, No internet service)."
+StreamingMovies,String,Service Information,"Indicates whether the customer streams movies via internet service (Yes, No, No internet service)."
+Contract,String,Account Information,"Contract agreement duration terms (Month-to-month, One year, Two year)."
+PaperlessBilling,String,Billing Information,"Indicates whether customer opted for electronic paperless billing (Yes, No)."
+PaymentMethod,String,Billing Information,"Customer payment disbursement channel (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))."
+MonthlyCharges,Float,Billing Information,The recurring amount billed to the customer each month (in USD).
+TotalCharges,Float,Billing Information,The cumulative total charges incurred over the customer tenure (in USD).
+Churn,String,Actual Outcome,"Actual historical status indicating whether customer churned in last month (Yes, No)."
+Tenure_Group,String,Analytical Feature,"Binned tenure cohort segmentation (0–12 Months, 13–24 Months, 25–48 Months, 49–72 Months)."
+Monthly_Charge_Range,String,Analytical Feature,"Binned monthly charges tier segmentation ($0–$35, $35–$70, $70–$90, $90+)."
+Predicted_Churn_Probability,Float,Machine Learning Prediction,Model-estimated posterior probability of customer churn (continuous float between 0.0000 and 1.0000).
+Churn_Risk_Percentage,Float,Machine Learning Prediction,Predicted churn probability expressed as a percentage rounded to 2 decimal places (0.00% to 100.00%).
+Predicted_Churn,String,Machine Learning Prediction,"Model classification outcome using default 0.50 decision threshold (Yes, No)."
+Prediction_Correct,String,Machine Learning Prediction,"Audit validation flag indicating if model prediction matches actual historical outcome (Yes, No)."
+Churn_Risk_Category,String,Risk Segmentation,"Three-tier probability risk categorization (Low Risk: <0.30, Medium Risk: 0.30-0.59, High Risk: >=0.60)."
+Churn_Risk_Score,Integer,Risk Segmentation,Calibrated integer risk score scaled from 0 to 100 based on predicted probability.
+Retention_Priority,String,Risk Segmentation,"Four-tier operational prioritization index (Priority 1 - Critical: >=0.80, Priority 2 - High: 0.60-0.79, Priority 3 - Medium: 0.30-0.59, Priority 4 - Low: <0.30)."
+Retention_Action,String,Retention Action,Rule-based prescriptive retention recommendations mapped to customer risk tier and service configuration.
+High_Risk_Flag,String,Risk Segmentation,"Operational executive filter flag identifying customers with >= 0.60 churn probability (Yes, No)."

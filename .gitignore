@@ -1,0 +1,39 @@
+# Python Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+*.mypy_cache/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Power BI & Office Temporary / Lock Files
+*.pbix.lck
+*.pbit.lck
+*.tmp
+~$*.xlsx
+~$*.csv
+~$*.pbix
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Scratch / Local Diagnostic Scripts
+scratch/

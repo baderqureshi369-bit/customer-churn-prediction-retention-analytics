@@ -1,0 +1,97 @@
+================================================================================
+TELCO CUSTOMER CHURN MODEL SELECTION REPORT & EXPLANATION
+================================================================================
+
+1. EXECUTIVE SUMMARY OF EVALUATION RESULTS
+--------------------------------------------------------------------------------
+Both models were trained on 5,634 stratified training records (80%) and evaluated 
+on the identical, untouched holdout test set of 1,409 customer records (20%).
+Positive Class: Churn = Yes / 1 (374 actual churners in test set).
+Negative Class: Churn = No / 0 (1,035 non-churners in test set).
+
+Metric Summary Table (Test Set n=1,409):
++---------------------+---------------------+------------------+--------------------+
+| Metric              | Logistic Regression | Random Forest    | Delta (LR vs RF)   |
++---------------------+---------------------+------------------+--------------------+
+| Accuracy            |              0.8055 |           0.7871 |            +0.0185 |
+| Precision           |              0.6572 |           0.6267 |            +0.0305 |
+| Recall (Sensitivity)|              0.5588 |           0.4893 |            +0.0695 |
+| F1-Score            |              0.6040 |           0.5495 |            +0.0545 |
+| ROC-AUC             |              0.8421 |           0.8193 |            +0.0229 |
++---------------------+---------------------+------------------+--------------------+
+
+Confusion Matrix Breakdown:
+- Logistic Regression:
+    * True Negatives  (TN): 926 (Correctly classified non-churners)
+    * False Positives (FP): 109 (Non-churners flagged as churn)
+    * False Negatives (FN): 165 (Actual churners missed)
+    * True Positives  (TP): 209 (Actual churners caught)
+
+- Random Forest:
+    * True Negatives  (TN): 926 (Correctly classified non-churners)
+    * False Positives (FP): 109 (Non-churners flagged as churn)
+    * False Negatives (FN): 191 (Actual churners missed)
+    * True Positives  (TP): 183 (Actual churners caught)
+
+
+2. SELECTED MODEL
+--------------------------------------------------------------------------------
+SELECTED MODEL: LOGISTIC REGRESSION
+(Full Scikit-Learn Pipeline: StandardScaler for numericals + OneHotEncoder for categoricals + LogisticRegression(max_iter=1000, random_state=42))
+
+
+3. BUSINESS OBJECTIVE ALIGNMENT & SELECTION RATIONALE
+--------------------------------------------------------------------------------
+Business Goal: Identify customers likely to churn while avoiding an excessively 
+large number of false positive retention targets and minimizing costly missed churners.
+
+Key Decision Rationale:
+1. Superior Discriminative Power (ROC-AUC: 0.8421 vs 0.8193):
+   Logistic Regression achieves a distinctly higher Area Under the ROC Curve (+0.0229), 
+   proving a superior capacity to rank churners above non-churners across all possible 
+   operating probability thresholds.
+
+2. Substantially Higher Recall / Churn Capture (+6.95 percentage points):
+   Logistic Regression captured 209 out of 374 churners (55.88%), whereas 
+   the Random Forest captured only 183 out of 374 (48.93%).
+   Random Forest generated 191 False Negatives (missed churners) compared to 165 
+   for Logistic Regression (26 additional missed churners). In telecommunications, 
+   customer acquisition costs (CAC) typically exceed retention costs by 5x-10x; missing 
+   26 at-risk customers represents substantial lost recurring revenue.
+
+3. Higher Precision & Harmonic F1-Score:
+   Logistic Regression simultaneously achieved higher Precision (65.72% vs 62.67%) 
+   and higher Recall, resulting in a significantly superior F1-Score (0.6040 vs 0.5495).
+   This indicates that Logistic Regression identifies more true churners while generating 
+   fewer false alarms relative to the positive identifications made.
+
+4. Well-Calibrated Posterior Probabilities for Retention Prioritization:
+   Logistic Regression outputs well-calibrated probabilities via the sigmoid link function. 
+   This allows the retention team in Phase 4 to construct risk tiers (e.g. High >0.70, 
+   Medium 0.40-0.70, Low <0.40) and dynamically tune target thresholds based on monthly 
+   intervention campaign budgets.
+
+5. Model Governance, Transparency & Simplicity:
+   Logistic Regression provides transparent, monotonic relationships without the risk of 
+   tree-based overfitting on smaller categorical splits, ensuring stable production deployment.
+
+
+4. TRADE-OFFS: FALSE POSITIVES VS. FALSE NEGATIVES
+--------------------------------------------------------------------------------
+- False Positives (FP): 
+  * Cost: Unnecessary retention contact or incentive offers given to customers who would stay.
+  * Logistic Regression generated 109 FP vs 109 FP in Random Forest.
+  * Management: Can be adjusted upwards by raising the classification decision boundary.
+- False Negatives (FN):
+  * Cost: Permanent loss of customer lifetime value (LTV) and high customer acquisition cost.
+  * Logistic Regression generated 165 FN vs 191 FN in Random Forest.
+
+
+5. MODEL LIMITATIONS
+--------------------------------------------------------------------------------
+1. Linear Decision Boundary: Logistic Regression models the log-odds linearly. Complex 
+   higher-order feature interactions must be explicitly captured.
+2. Sensitivity to Multicollinearity: Continuous features (tenure, TotalCharges, MonthlyCharges) 
+   share mutual information; standard scaling and L2 regularization ensure numerical stability.
+3. Observational Associations vs Causation: Feature relationships and regression weights 
+   demonstrate predictive correlation, not proven business causation.

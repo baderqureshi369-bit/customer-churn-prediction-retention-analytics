@@ -1,0 +1,3 @@
+Churn,Customer_Count,Average_TotalCharges,Median_TotalCharges,Std_TotalCharges,Minimum_TotalCharges,Maximum_TotalCharges
+No,5174,2549.91,1679.52,2329.95,0.0,8672.45
+Yes,1869,1531.8,703.55,1890.82,18.85,8684.8

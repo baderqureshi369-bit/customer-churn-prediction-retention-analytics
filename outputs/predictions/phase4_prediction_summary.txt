@@ -1,0 +1,60 @@
+================================================================================
+TELCO CUSTOMER CHURN PREDICTION - PHASE 4 PREDICTION SUMMARY REPORT
+================================================================================
+
+1. DATASET VOLUME & OVERVIEW
+--------------------------------------------------------------------------------
+A. Total Customers:                    7,043
+B. Actual Churned Customers (Yes):     1,869 (26.54%)
+C. Actual Retained Customers (No):     5,174 (73.46%)
+D. Actual Churn Rate:                  26.54%
+E. Predicted Churned Customers (0.50): 1,562 (22.18%)
+   Predicted Retained Customers:       5,481 (77.82%)
+
+2. CHURN RISK CATEGORY DISTRIBUTION
+--------------------------------------------------------------------------------
+F. Risk Segmentation Breakdown:
+   - Low Risk    (Prob < 0.30):        4,371 (62.06%)
+   - Medium Risk (0.30 <= Prob < 0.60): 1,633 (23.19%)
+   - High Risk   (Prob >= 0.60):       1,039 (14.75%)
+   Total:                              7,043 (100.00%)
+
+3. RETENTION OPERATIONAL PRIORITY DISTRIBUTION
+--------------------------------------------------------------------------------
+G. Operational Priority Breakdown:
+   - Priority 1 - Critical (Prob >= 0.80):           49 ( 0.70%)
+   - Priority 2 - High     (0.60 <= Prob < 0.80):   990 (14.06%)
+   - Priority 3 - Medium   (0.30 <= Prob < 0.60): 1,633 (23.19%)
+   - Priority 4 - Low      (Prob < 0.30):         4,371 (62.06%)
+   Total:                                         7,043 (100.00%)
+
+H. High Risk Flag Summary:
+   - High_Risk_Flag = 'Yes' (Prob >= 0.60): 1,039 (14.75%)
+   - High_Risk_Flag = 'No'  (Prob < 0.60):  6,004 (85.25%)
+
+4. PREDICTED CHURN PROBABILITY DISTRIBUTION STATISTICS
+--------------------------------------------------------------------------------
+I. Average Predicted Churn Probability: 0.2659 (26.59%)
+J. Median Predicted Churn Probability:  0.1887 (18.87%)
+K. Minimum Predicted Churn Probability: 0.0016 (0.16%)
+L. Maximum Predicted Churn Probability: 0.8555 (85.55%)
+   Standard Deviation of Probability:   0.2446
+
+5. TOP 10 HIGHEST-RISK CUSTOMERS
+--------------------------------------------------------------------------------
+#   | CustomerID  | Actual | Prob     | Risk %  | Category    | Priority              | Retention Action
+------------------------------------------------------------------------------------------------------------------------
+1   | 9497-QCMMS  | Yes    | 0.8555   | 85.55% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+2   | 9300-AGZNL  | Yes    | 0.8544   | 85.44% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+3   | 5178-LMXOP  | Yes    | 0.8543   | 85.43% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+4   | 4424-TKOPW  | Yes    | 0.8514   | 85.14% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+5   | 2720-WGKHP  | Yes    | 0.8506   | 85.06% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+6   | 5567-WSELE  | Yes    | 0.8481   | 84.81% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+7   | 7024-OHCCK  | Yes    | 0.8478   | 84.78% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+8   | 5150-ITWWB  | No     | 0.8465   | 84.65% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+9   | 7216-EWTRS  | Yes    | 0.8448   | 84.48% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+10  | 1374-DMZUI  | Yes    | 0.8411   | 84.11% | High Risk   | Priority 1 - Critical | Offer contract upgrade incentive; Promote automatic payment enrollment; Offer security service retention package; Offer technical support retention package
+
+================================================================================
+END OF SUMMARY REPORT
+================================================================================

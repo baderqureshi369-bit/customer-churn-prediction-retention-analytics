@@ -1,0 +1,5 @@
+Monthly_Charge_Range,Total_Customers,Churned_Customers,Retained_Customers,Average_MonthlyCharges,Churn_Rate_Pct
+$0–$35,1735,189,1546,22.03,10.89
+$35.01–$70,1725,413,1312,54.84,23.94
+$70.01–$90,1844,697,1147,80.06,37.8
+$90.01–$120,1739,570,1169,101.02,32.78

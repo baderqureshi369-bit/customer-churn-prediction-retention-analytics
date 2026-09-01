@@ -1,0 +1,516 @@
+{
+  "createOrReplace": {
+    "object": {
+      "database": "3b747c39-23bb-417d-96e0-e976777f0047"
+    },
+    "database": {
+      "id": "3b747c39-23bb-417d-96e0-e976777f0047",
+      "name": "3b747c39-23bb-417d-96e0-e976777f0047",
+      "compatibilityLevel": 1606,
+      "model": {
+        "culture": "en-US",
+        "defaultPowerBIDataSourceVersion": "powerBI_V3",
+        "tables": [
+          {
+            "name": "customer_churn_analytics",
+            "columns": [
+              {
+                "name": "customerID",
+                "dataType": "string",
+                "sourceColumn": "customerID"
+              },
+              {
+                "name": "gender",
+                "dataType": "string",
+                "sourceColumn": "gender"
+              },
+              {
+                "name": "SeniorCitizen",
+                "dataType": "int64",
+                "sourceColumn": "SeniorCitizen"
+              },
+              {
+                "name": "Partner",
+                "dataType": "string",
+                "sourceColumn": "Partner"
+              },
+              {
+                "name": "Dependents",
+                "dataType": "string",
+                "sourceColumn": "Dependents"
+              },
+              {
+                "name": "tenure",
+                "dataType": "int64",
+                "sourceColumn": "tenure"
+              },
+              {
+                "name": "PhoneService",
+                "dataType": "string",
+                "sourceColumn": "PhoneService"
+              },
+              {
+                "name": "MultipleLines",
+                "dataType": "string",
+                "sourceColumn": "MultipleLines"
+              },
+              {
+                "name": "InternetService",
+                "dataType": "string",
+                "sourceColumn": "InternetService"
+              },
+              {
+                "name": "OnlineSecurity",
+                "dataType": "string",
+                "sourceColumn": "OnlineSecurity"
+              },
+              {
+                "name": "OnlineBackup",
+                "dataType": "string",
+                "sourceColumn": "OnlineBackup"
+              },
+              {
+                "name": "DeviceProtection",
+                "dataType": "string",
+                "sourceColumn": "DeviceProtection"
+              },
+              {
+                "name": "TechSupport",
+                "dataType": "string",
+                "sourceColumn": "TechSupport"
+              },
+              {
+                "name": "StreamingTV",
+                "dataType": "string",
+                "sourceColumn": "StreamingTV"
+              },
+              {
+                "name": "StreamingMovies",
+                "dataType": "string",
+                "sourceColumn": "StreamingMovies"
+              },
+              {
+                "name": "Contract",
+                "dataType": "string",
+                "sourceColumn": "Contract"
+              },
+              {
+                "name": "PaperlessBilling",
+                "dataType": "string",
+                "sourceColumn": "PaperlessBilling"
+              },
+              {
+                "name": "PaymentMethod",
+                "dataType": "string",
+                "sourceColumn": "PaymentMethod"
+              },
+              {
+                "name": "MonthlyCharges",
+                "dataType": "double",
+                "sourceColumn": "MonthlyCharges",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "TotalCharges",
+                "dataType": "double",
+                "sourceColumn": "TotalCharges",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "Churn",
+                "dataType": "string",
+                "sourceColumn": "Churn"
+              },
+              {
+                "name": "Tenure_Group",
+                "dataType": "string",
+                "sourceColumn": "Tenure_Group"
+              },
+              {
+                "name": "Monthly_Charge_Range",
+                "dataType": "string",
+                "sourceColumn": "Monthly_Charge_Range"
+              },
+              {
+                "name": "Predicted_Churn_Probability",
+                "dataType": "double",
+                "sourceColumn": "Predicted_Churn_Probability",
+                "formatString": "0.0000"
+              },
+              {
+                "name": "Churn_Risk_Percentage",
+                "dataType": "double",
+                "sourceColumn": "Churn_Risk_Percentage",
+                "formatString": "0.00"
+              },
+              {
+                "name": "Predicted_Churn",
+                "dataType": "string",
+                "sourceColumn": "Predicted_Churn"
+              },
+              {
+                "name": "Prediction_Correct",
+                "dataType": "string",
+                "sourceColumn": "Prediction_Correct"
+              },
+              {
+                "name": "Churn_Risk_Category",
+                "dataType": "string",
+                "sourceColumn": "Churn_Risk_Category",
+                "sortByColumn": "Risk_Sort_Order"
+              },
+              {
+                "name": "Churn_Risk_Score",
+                "dataType": "int64",
+                "sourceColumn": "Churn_Risk_Score"
+              },
+              {
+                "name": "Retention_Priority",
+                "dataType": "string",
+                "sourceColumn": "Retention_Priority",
+                "sortByColumn": "Retention_Sort_Order"
+              },
+              {
+                "name": "Retention_Action",
+                "dataType": "string",
+                "sourceColumn": "Retention_Action"
+              },
+              {
+                "name": "High_Risk_Flag",
+                "dataType": "string",
+                "sourceColumn": "High_Risk_Flag"
+              },
+              {
+                "type": "calculated",
+                "name": "Risk_Sort_Order",
+                "dataType": "int64",
+                "expression": "RELATED(risk_category_sort[Sort_Order])",
+                "isHidden": true
+              },
+              {
+                "type": "calculated",
+                "name": "Retention_Sort_Order",
+                "dataType": "int64",
+                "expression": "RELATED(retention_priority_sort[Sort_Order])",
+                "isHidden": true
+              }
+            ],
+            "measures": [
+              {
+                "name": "Total Customers",
+                "expression": "COUNTROWS(customer_churn_analytics)",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Actual Churned Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Actual Retained Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"No\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Actual Churn Rate",
+                "expression": "DIVIDE([Actual Churned Customers], [Total Customers], 0)",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Predicted Churn Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Predicted_Churn] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Predicted Retained Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Predicted_Churn] = \"No\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Predicted Churn Rate",
+                "expression": "DIVIDE([Predicted Churn Customers], [Total Customers], 0)",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "High Risk Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[High_Risk_Flag] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "High Risk Rate",
+                "expression": "DIVIDE([High Risk Customers], [Total Customers], 0)",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Critical Priority Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Retention_Priority] = \"Priority 1 - Critical\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "High Priority Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Retention_Priority] = \"Priority 2 - High\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Medium Priority Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Retention_Priority] = \"Priority 3 - Medium\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Low Priority Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Retention_Priority] = \"Priority 4 - Low\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Average Churn Probability",
+                "expression": "AVERAGE(customer_churn_analytics[Predicted_Churn_Probability])",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Median Churn Probability",
+                "expression": "MEDIAN(customer_churn_analytics[Predicted_Churn_Probability])",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Max Churn Probability",
+                "expression": "MAX(customer_churn_analytics[Predicted_Churn_Probability])",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Min Churn Probability",
+                "expression": "MIN(customer_churn_analytics[Predicted_Churn_Probability])",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Average Monthly Charges",
+                "expression": "AVERAGE(customer_churn_analytics[MonthlyCharges])",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "Average Tenure",
+                "expression": "AVERAGE(customer_churn_analytics[tenure])",
+                "formatString": "#,##0.0"
+              },
+              {
+                "name": "Average Total Charges",
+                "expression": "AVERAGE(customer_churn_analytics[TotalCharges])",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "Total Monthly Revenue",
+                "expression": "SUM(customer_churn_analytics[MonthlyCharges])",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "At-Risk Revenue",
+                "expression": "CALCULATE(SUM(customer_churn_analytics[MonthlyCharges]), customer_churn_analytics[High_Risk_Flag] = \"Yes\")",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "Churned Customer Revenue",
+                "expression": "CALCULATE(SUM(customer_churn_analytics[MonthlyCharges]), customer_churn_analytics[Churn] = \"Yes\")",
+                "formatString": "$#,##0.00"
+              },
+              {
+                "name": "Correct Predictions",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Prediction_Correct] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Incorrect Predictions",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Prediction_Correct] = \"No\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Prediction Accuracy",
+                "expression": "DIVIDE([Correct Predictions], [Total Customers], 0)",
+                "formatString": "0.00%"
+              },
+              {
+                "name": "Churn Probability Average %",
+                "expression": "AVERAGE(customer_churn_analytics[Churn_Risk_Percentage])",
+                "formatString": "0.00"
+              },
+              {
+                "name": "Average Risk Score",
+                "expression": "AVERAGE(customer_churn_analytics[Churn_Risk_Score])",
+                "formatString": "0.0"
+              },
+              {
+                "name": "True Positives",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"Yes\", customer_churn_analytics[Predicted_Churn] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "True Negatives",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"No\", customer_churn_analytics[Predicted_Churn] = \"No\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "False Positives",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"No\", customer_churn_analytics[Predicted_Churn] = \"Yes\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "False Negatives",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[Churn] = \"Yes\", customer_churn_analytics[Predicted_Churn] = \"No\")",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Senior Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[SeniorCitizen] = 1)",
+                "formatString": "#,##0"
+              },
+              {
+                "name": "Non-Senior Customers",
+                "expression": "CALCULATE(COUNTROWS(customer_churn_analytics), customer_churn_analytics[SeniorCitizen] = 0)",
+                "formatString": "#,##0"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "customer_churn_analytics-partition",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": "let\n    Source = Csv.Document(File.Contents(\"C:\\\\Users\\\\bader\\\\Desktop\\\\CCPRA Project\\\\data\\\\powerbi\\\\customer_churn_analytics.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    Types = Table.TransformColumnTypes(Headers, {\n        {\"customerID\", type text},\n        {\"gender\", type text},\n        {\"SeniorCitizen\", Int64.Type},\n        {\"Partner\", type text},\n        {\"Dependents\", type text},\n        {\"tenure\", Int64.Type},\n        {\"PhoneService\", type text},\n        {\"MultipleLines\", type text},\n        {\"InternetService\", type text},\n        {\"OnlineSecurity\", type text},\n        {\"OnlineBackup\", type text},\n        {\"DeviceProtection\", type text},\n        {\"TechSupport\", type text},\n        {\"StreamingTV\", type text},\n        {\"StreamingMovies\", type text},\n        {\"Contract\", type text},\n        {\"PaperlessBilling\", type text},\n        {\"PaymentMethod\", type text},\n        {\"MonthlyCharges\", type number},\n        {\"TotalCharges\", type number},\n        {\"Churn\", type text},\n        {\"Tenure_Group\", type text},\n        {\"Monthly_Charge_Range\", type text},\n        {\"Predicted_Churn_Probability\", type number},\n        {\"Churn_Risk_Percentage\", type number},\n        {\"Predicted_Churn\", type text},\n        {\"Prediction_Correct\", type text},\n        {\"Churn_Risk_Category\", type text},\n        {\"Churn_Risk_Score\", Int64.Type},\n        {\"Retention_Priority\", type text},\n        {\"Retention_Action\", type text},\n        {\"High_Risk_Flag\", type text}\n    })\nin\n    Types"
+                }
+              }
+            ]
+          },
+          {
+            "name": "risk_category_sort",
+            "columns": [
+              {
+                "name": "Risk_Category",
+                "dataType": "string",
+                "sourceColumn": "Risk_Category",
+                "sortByColumn": "Sort_Order"
+              },
+              {
+                "name": "Sort_Order",
+                "dataType": "int64",
+                "sourceColumn": "Sort_Order",
+                "isHidden": true
+              }
+            ],
+            "partitions": [
+              {
+                "name": "risk_category_sort-partition",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": "let\n    Source = Csv.Document(File.Contents(\"C:\\\\Users\\\\bader\\\\Desktop\\\\CCPRA Project\\\\data\\\\powerbi\\\\risk_category_sort.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    Types = Table.TransformColumnTypes(Headers, {\n        {\"Risk_Category\", type text},\n        {\"Sort_Order\", Int64.Type}\n    })\nin\n    Types"
+                }
+              }
+            ]
+          },
+          {
+            "name": "retention_priority_sort",
+            "columns": [
+              {
+                "name": "Retention_Priority",
+                "dataType": "string",
+                "sourceColumn": "Retention_Priority",
+                "sortByColumn": "Sort_Order"
+              },
+              {
+                "name": "Sort_Order",
+                "dataType": "int64",
+                "sourceColumn": "Sort_Order",
+                "isHidden": true
+              }
+            ],
+            "partitions": [
+              {
+                "name": "retention_priority_sort-partition",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": "let\n    Source = Csv.Document(File.Contents(\"C:\\\\Users\\\\bader\\\\Desktop\\\\CCPRA Project\\\\data\\\\powerbi\\\\retention_priority_sort.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\n    Types = Table.TransformColumnTypes(Headers, {\n        {\"Retention_Priority\", type text},\n        {\"Sort_Order\", Int64.Type}\n    })\nin\n    Types"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Model_Performance",
+            "columns": [
+              {
+                "type": "calculatedTableColumn",
+                "name": "Model",
+                "dataType": "string",
+                "sourceColumn": "[Model]",
+                "isNameInferred": true
+              },
+              {
+                "type": "calculatedTableColumn",
+                "name": "Accuracy",
+                "dataType": "double",
+                "sourceColumn": "[Accuracy]",
+                "isNameInferred": true,
+                "formatString": "0.00%"
+              },
+              {
+                "type": "calculatedTableColumn",
+                "name": "Precision_Score",
+                "dataType": "double",
+                "sourceColumn": "[Precision_Score]",
+                "isNameInferred": true,
+                "formatString": "0.00%"
+              },
+              {
+                "type": "calculatedTableColumn",
+                "name": "Recall",
+                "dataType": "double",
+                "sourceColumn": "[Recall]",
+                "isNameInferred": true,
+                "formatString": "0.00%"
+              },
+              {
+                "type": "calculatedTableColumn",
+                "name": "F1_Score",
+                "dataType": "double",
+                "sourceColumn": "[F1_Score]",
+                "isNameInferred": true,
+                "formatString": "0.00%"
+              },
+              {
+                "type": "calculatedTableColumn",
+                "name": "ROC_AUC",
+                "dataType": "double",
+                "sourceColumn": "[ROC_AUC]",
+                "isNameInferred": true,
+                "formatString": "0.00%"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Model_Performance-partition",
+                "source": {
+                  "type": "calculated",
+                  "expression": "DATATABLE(\n    \"Model\", STRING,\n    \"Accuracy\", DOUBLE,\n    \"Precision_Score\", DOUBLE,\n    \"Recall\", DOUBLE,\n    \"F1_Score\", DOUBLE,\n    \"ROC_AUC\", DOUBLE,\n    {\n        {\"Logistic Regression\", 0.8055, 0.6572, 0.5588, 0.6040, 0.8421},\n        {\"Random Forest\", 0.7871, 0.6267, 0.4893, 0.5496, 0.8193}\n    }\n)"
+                }
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "risk_category_relationship",
+            "fromTable": "customer_churn_analytics",
+            "fromColumn": "Churn_Risk_Category",
+            "toTable": "risk_category_sort",
+            "toColumn": "Risk_Category"
+          },
+          {
+            "name": "retention_priority_relationship",
+            "fromTable": "customer_churn_analytics",
+            "fromColumn": "Retention_Priority",
+            "toTable": "retention_priority_sort",
+            "toColumn": "Retention_Priority"
+          }
+        ]
+      }
+    }
+  }
+}

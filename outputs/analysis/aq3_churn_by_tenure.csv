@@ -1,0 +1,5 @@
+Tenure_Group,Total_Customers,Churned_Customers,Retained_Customers,Churn_Rate_Pct
+0–12 Months,2186,1037,1149,47.44
+13–24 Months,1024,294,730,28.71
+25–48 Months,1594,325,1269,20.39
+49–72 Months,2239,213,2026,9.51

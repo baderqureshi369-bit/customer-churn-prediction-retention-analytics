@@ -1,0 +1,5 @@
+PaymentMethod,Total_Customers,Churned_Customers,Retained_Customers,Churn_Rate_Pct
+Electronic check,2365,1071,1294,45.29
+Mailed check,1612,308,1304,19.11
+Bank transfer (automatic),1544,258,1286,16.71
+Credit card (automatic),1522,232,1290,15.24

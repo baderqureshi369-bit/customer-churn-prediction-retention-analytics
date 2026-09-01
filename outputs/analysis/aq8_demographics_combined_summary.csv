@@ -1,0 +1,11 @@
+Characteristic,Category,Total_Customers,Churned_Customers,Churn_Rate_Pct
+SeniorCitizen,Yes (1),1142,476,41.68
+PaperlessBilling,Yes,4171,1400,33.57
+Partner,No,3641,1200,32.96
+Dependents,No,4933,1543,31.28
+gender,Female,3488,939,26.92
+gender,Male,3555,930,26.16
+SeniorCitizen,No (0),5901,1393,23.61
+Partner,Yes,3402,669,19.66
+PaperlessBilling,No,2872,469,16.33
+Dependents,Yes,2110,326,15.45

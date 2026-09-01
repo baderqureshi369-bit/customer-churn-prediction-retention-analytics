@@ -1,0 +1,211 @@
+================================================================================
+PHASE 2: EXPLORATORY DATA ANALYSIS (EDA) SUMMARY
+================================================================================
+
+AQ1 — OVERALL CUSTOMER CHURN RATE
+--------------------------------------------------
+Question: What is the overall customer churn rate?
+Actual Numerical Results:
+  • Total Customers:    7,043
+  • Churned Customers:  1,869
+  • Retained Customers: 5,174
+  • Overall Churn Rate: 26.54%
+  • Retention Rate:     73.46%
+Evidence-Based Interpretation:
+  Approximately 1 out of every 3.77 customers (26.54%) in the analyzed dataset churned,
+  establishing the benchmark for comparing individual subgroups.
+
+AQ2 — CHURN BY CONTRACT TYPE
+--------------------------------------------------
+Question: Which contract types have the highest churn rate?
+Actual Numerical Results:
+  • Month-to-month  : Churn Rate = 42.71% | Churned = 1,655 | Total = 3,875
+  • One year        : Churn Rate = 11.27% | Churned =   166 | Total = 1,473
+  • Two year        : Churn Rate =  2.83% | Churned =    48 | Total = 1,695
+Highest / Lowest Categories:
+  • Highest Churn Rate: Month-to-month (42.71%)
+  • Lowest Churn Rate:  Two year (2.83%)
+Evidence-Based Interpretation:
+  Customers on Month-to-month contracts showed an observed churn rate of 42.71%,
+  which is 15.1 times higher than customers on Two year contracts (2.83%).
+
+AQ3 — TENURE AND CHURN
+--------------------------------------------------
+Question: How does customer tenure relate to churn?
+Actual Numerical Results:
+  • 0–12 Months   : Churn Rate = 47.44% | Churned = 1,037 | Total = 2,186
+  • 13–24 Months  : Churn Rate = 28.71% | Churned =   294 | Total = 1,024
+  • 25–48 Months  : Churn Rate = 20.39% | Churned =   325 | Total = 1,594
+  • 49–72 Months  : Churn Rate =  9.51% | Churned =   213 | Total = 2,239
+Highest / Lowest Categories:
+  • Highest Churn Rate: 0–12 Months (47.44%)
+  • Lowest Churn Rate:  49–72 Months (9.51%)
+Evidence-Based Interpretation:
+  Observed churn rate decreased monotonically across tenure cohorts, from 47.44% in the first
+  year (0–12 months) down to 9.51% for long-tenure customers (49–72 months).
+
+AQ4 — INTERNET AND SERVICE ANALYSIS
+--------------------------------------------------
+Question: Which internet or service categories are associated with higher churn?
+Actual Numerical Results (Top 5 Highest Churn Service Categories):
+  • InternetService = Fiber optic       : Churn Rate = 41.89% (Churned: 1,297 / 3,096)
+  • OnlineSecurity = No                : Churn Rate = 41.77% (Churned: 1,461 / 3,498)
+  • TechSupport = No                : Churn Rate = 41.64% (Churned: 1,446 / 3,473)
+  • OnlineBackup = No                : Churn Rate = 39.93% (Churned: 1,233 / 3,088)
+  • DeviceProtection = No                : Churn Rate = 39.13% (Churned: 1,211 / 3,095)
+Key Service Comparisons:
+  • Fiber optic internet: 41.89% churn rate vs DSL (18.96%) and No internet service (7.40%)
+  • OnlineSecurity = No: 41.77% churn rate vs Yes (14.61%)
+  • TechSupport = No:    41.64% churn rate vs Yes (15.20%)
+  • OnlineBackup = No:   39.93% churn rate vs Yes (21.53%)
+  • DeviceProtection = No: 39.13% churn rate vs Yes (22.50%)
+Evidence-Based Interpretation:
+  Fiber optic internet subscribers and customers who lack value-added protective services
+  (OnlineSecurity, TechSupport, DeviceProtection, OnlineBackup) consistently exhibited churn rates near or above 40%.
+
+AQ5 — CHURN BY PAYMENT METHOD
+--------------------------------------------------
+Question: Does churn vary by payment method?
+Actual Numerical Results:
+  • Electronic check          : Churn Rate = 45.29% | Churned = 1,071 | Total = 2,365
+  • Mailed check              : Churn Rate = 19.11% | Churned =   308 | Total = 1,612
+  • Bank transfer (automatic) : Churn Rate = 16.71% | Churned =   258 | Total = 1,544
+  • Credit card (automatic)   : Churn Rate = 15.24% | Churned =   232 | Total = 1,522
+Highest / Lowest Categories:
+  • Highest Churn Rate: Electronic check (45.29%)
+  • Lowest Churn Rate:  Credit card (automatic) (15.24%)
+Evidence-Based Interpretation:
+  Electronic check users exhibited a churn rate of 45.29%, more than double the churn rate of
+  any other payment method (which ranged from 15.24% to 19.11%).
+
+AQ6 — MONTHLY CHARGES AND CHURN
+--------------------------------------------------
+Question: Is MonthlyCharges associated with churn?
+Actual Numerical Results:
+  • $0–$35        : Churn Rate = 10.89% | Avg Charges = $ 22.03 | Churned =   189 | Total = 1,735
+  • $35.01–$70    : Churn Rate = 23.94% | Avg Charges = $ 54.84 | Churned =   413 | Total = 1,725
+  • $70.01–$90    : Churn Rate = 37.80% | Avg Charges = $ 80.06 | Churned =   697 | Total = 1,844
+  • $90.01–$120   : Churn Rate = 32.78% | Avg Charges = $101.02 | Churned =   570 | Total = 1,739
+Overall Charge Comparison:
+  • Mean MonthlyCharges for Churned Customers:  $74.44
+  • Mean MonthlyCharges for Retained Customers: $61.27
+  • Observed Difference:                       +$13.17
+Evidence-Based Interpretation:
+  Churn rates were noticeably higher in the upper charge bands ($70.01–$90 at 37.80% and $90.01–$120 at 32.78%)
+  compared to the lowest charge band ($0–$35 at 10.89%).
+
+AQ7 — TOTAL CHARGES COMPARISON
+--------------------------------------------------
+Question: Do TotalCharges differ between churned and retained customers?
+Actual Numerical Results:
+  • Churn = No : Count = 5,174 | Mean = $ 2549.91 | Median = $ 1679.52 | Min = $ 0.00 | Max = $ 8672.45
+  • Churn = Yes: Count = 1,869 | Mean = $ 1531.80 | Median = $  703.55 | Min = $18.85 | Max = $ 8684.80
+Evidence-Based Interpretation:
+  Retained customers had higher average TotalCharges ($2,549.91 vs $1,531.80) and median TotalCharges
+  ($1,679.52 vs $703.55) than churned customers. This reflects the significantly longer tenure distribution
+  among retained customers rather than higher price points.
+
+AQ8 — CUSTOMER CHARACTERISTICS
+--------------------------------------------------
+Question: Which customer characteristics are associated with higher churn?
+Actual Numerical Results (Summary Ranking):
+  • SeniorCitizen = Yes (1)   : Churn Rate = 41.68% (Churned: 476 / 1,142)
+  • PaperlessBilling = Yes       : Churn Rate = 33.57% (Churned: 1,400 / 4,171)
+  • Partner = No        : Churn Rate = 32.96% (Churned: 1,200 / 3,641)
+  • Dependents = No        : Churn Rate = 31.28% (Churned: 1,543 / 4,933)
+  • gender = Female    : Churn Rate = 26.92% (Churned: 939 / 3,488)
+  • gender = Male      : Churn Rate = 26.16% (Churned: 930 / 3,555)
+  • SeniorCitizen = No (0)    : Churn Rate = 23.61% (Churned: 1,393 / 5,901)
+  • Partner = Yes       : Churn Rate = 19.66% (Churned: 669 / 3,402)
+  • PaperlessBilling = No        : Churn Rate = 16.33% (Churned: 469 / 2,872)
+  • Dependents = Yes       : Churn Rate = 15.45% (Churned: 326 / 2,110)
+Key Comparisons:
+  • Senior Citizens:  41.68% churn rate vs Non-Seniors (23.61%)
+  • PaperlessBilling: 33.57% churn rate vs Standard Billing (16.33%)
+  • Dependents = No:  31.28% churn rate vs Dependents = Yes (15.45%)
+  • Partner = No:     32.96% churn rate vs Partner = Yes (19.66%)
+  • Gender:           Female (26.92%) vs Male (26.16%) — negligible difference (0.76%)
+Evidence-Based Interpretation:
+  Senior citizen status, paperless billing, lack of partner, and lack of dependents were associated
+  with higher observed churn rates, whereas gender showed no meaningful difference.
+
+AQ9 — CONTRACT AND INTERNET SERVICE COMBINATIONS
+--------------------------------------------------
+Question: Which combinations of Contract and InternetService show elevated churn?
+Actual Numerical Results (Ranked by Churn Rate):
+  • Month-to-month   + Fiber optic : Churn Rate = 54.61% | Churned = 1,162 | Total = 2,128
+  • Month-to-month   + DSL         : Churn Rate = 32.22% | Churned =   394 | Total = 1,223
+  • One year         + Fiber optic : Churn Rate = 19.29% | Churned =   104 | Total =   539
+  • Month-to-month   + No          : Churn Rate = 18.89% | Churned =    99 | Total =   524
+  • One year         + DSL         : Churn Rate =  9.30% | Churned =    53 | Total =   570
+  • Two year         + Fiber optic : Churn Rate =  7.23% | Churned =    31 | Total =   429
+  • One year         + No          : Churn Rate =  2.47% | Churned =     9 | Total =   364
+  • Two year         + DSL         : Churn Rate =  1.91% | Churned =    12 | Total =   628
+  • Two year         + No          : Churn Rate =  0.78% | Churned =     5 | Total =   638
+Evidence-Based Interpretation:
+  Month-to-month contracts combined with Fiber optic internet produced the highest churn rate (54.61%)
+  and generated 1,162 churned customers (62.17% of all dataset churn).
+  In contrast, Two year contracts across all internet types maintained churn rates under 7.5%.
+
+AQ10 — CUSTOMER SEGMENTS WITH HIGHEST CHURN VOLUME
+--------------------------------------------------
+Question: Which customer segments contain the largest number of churned customers?
+Actual Numerical Results (Top 10 Churn Volume Segments):
+   1. Month-to-month | Fiber optic | 0–12 Months      : Churned Volume =  643 | Churn Rate = 70.20% | Total =   916
+   2. Month-to-month | DSL | 0–12 Months              : Churned Volume =  293 | Churn Rate = 42.46% | Total =   690
+   3. Month-to-month | Fiber optic | 25–48 Months     : Churned Volume =  226 | Churn Rate = 43.38% | Total =   521
+   4. Month-to-month | Fiber optic | 13–24 Months     : Churned Volume =  215 | Churn Rate = 50.59% | Total =   425
+   5. Month-to-month | No | 0–12 Months               : Churned Volume =   88 | Churn Rate = 22.68% | Total =   388
+   6. Month-to-month | Fiber optic | 49–72 Months     : Churned Volume =   78 | Churn Rate = 29.32% | Total =   266
+   7. One year | Fiber optic | 49–72 Months           : Churned Volume =   67 | Churn Rate = 18.87% | Total =   355
+   8. Month-to-month | DSL | 13–24 Months             : Churned Volume =   55 | Churn Rate = 23.71% | Total =   232
+   9. Month-to-month | DSL | 25–48 Months             : Churned Volume =   36 | Churn Rate = 15.86% | Total =   227
+  10. One year | Fiber optic | 25–48 Months           : Churned Volume =   31 | Churn Rate = 20.13% | Total =   154
+Evidence-Based Interpretation:
+  The top churn volume segment is Month-to-month | Fiber optic | 0–12 Months with 643 churned customers
+  (70.20% churn rate), followed by Month-to-month | DSL | 0–12 Months (293 churned).
+  Targeting these high-volume early-tenure month-to-month cohorts offers the largest potential reduction in churn volume.
+
+================================================================================
+KEY VERIFIED EDA FINDINGS
+================================================================================
+
+1. Overall Dataset Baseline:
+   The baseline customer churn rate across all 7,043 customers was 26.54% (1,869 churned vs 5,174 retained).
+
+2. Contract Commitment as Primary Differentiator:
+   Month-to-month contract holders exhibited a 42.71% churn rate (1,655 churned out of 3,875), compared to
+   11.27% for One year and 2.83% for Two year contracts, demonstrating an inverse relationship with commitment term.
+
+3. Early Tenure Vulnerability:
+   New customers (0–12 months tenure) showed the highest churn rate at 47.44% (1,037 churned customers),
+   which steadily decreased to 28.71% (13–24 mos), 20.39% (25–48 mos), and 9.51% (49–72 mos).
+
+4. Elevated Fiber Optic Churn Rate:
+   Fiber optic internet subscribers experienced a 41.89% churn rate (1,297 churned out of 3,096),
+   compared to 18.96% for DSL and 7.40% for customers with No internet service.
+
+5. Protective Service Add-ons Association:
+   Subscribers without OnlineSecurity (41.77% churn rate) or without TechSupport (41.64% churn rate)
+   had almost 3x higher churn rates compared to those with active security (14.61%) or tech support (15.20%).
+
+6. Payment Method Disparity:
+   Electronic check was associated with the highest churn rate at 45.29% (1,071 churned customers),
+   whereas automated payment methods (Bank transfer: 16.71%, Credit card: 15.24%) exhibited lower churn.
+
+7. Monthly Charge Disparity:
+   Churned customers paid an average of $74.44/month compared to $61.27/month for retained customers
+   (an observed difference of +$13.17/month). Churn peaked in the $70.01–$90 monthly charge band (37.80%).
+
+8. Demographic & Family Structure Patterns:
+   Senior citizens showed an elevated churn rate of 41.68% (vs 23.61% for non-seniors), while customers
+   without partners (32.96%) or dependents (31.28%) showed higher churn than those with family ties.
+   Gender exhibited no practical difference (Female: 26.92%, Male: 26.16%).
+
+9. High-Risk Compound Segment (Contract × Internet):
+   The combination of Month-to-month contracts with Fiber optic internet had a 54.61% churn rate
+   and accounted for 1,162 churned customers (62.17% of all dataset churn).
+
+10. Maximum Churn Volume Concentration:
+    A single micro-segment — Month-to-month | Fiber optic | 0–12 Months tenure — concentrated
+    643 churned customers (churn rate: 70.20%), representing 34.40% of total dataset churn from 916 customers.

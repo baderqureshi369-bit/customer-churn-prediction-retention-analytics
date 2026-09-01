@@ -1,0 +1,27 @@
+RANDOM FOREST CLASSIFICATION REPORT
+============================================================
+Model Configuration: RandomForestClassifier(random_state=42)
+Preprocessing: Passthrough (numericals), OneHotEncoder (categoricals)
+Positive Class: Churn = Yes / 1
+
+Accuracy:  0.787083
+Precision: 0.626712
+Recall:    0.489305
+F1-Score:  0.549550
+ROC-AUC:   0.819280
+
+              precision    recall  f1-score   support
+
+No Churn (0)       0.83      0.89      0.86      1035
+   Churn (1)       0.63      0.49      0.55       374
+
+    accuracy                           0.79      1409
+   macro avg       0.73      0.69      0.71      1409
+weighted avg       0.78      0.79      0.78      1409
+
+
+Confusion Matrix (Test Set n=1,409):
+True Negatives  (TN): 926 (Correctly predicted Non-Churn)
+False Positives (FP): 109 (Non-Churners predicted as Churn)
+False Negatives (FN): 191 (Actual Churners missed)
+True Positives  (TP): 183 (Correctly predicted Churn)

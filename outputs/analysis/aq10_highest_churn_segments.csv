@@ -1,0 +1,37 @@
+Contract,InternetService,Tenure_Group,Total_Customers,Churned_Customers,Retained_Customers,Churn_Rate_Pct,Segment_Name
+Month-to-month,Fiber optic,0–12 Months,916,643,273,70.2,Month-to-month | Fiber optic | 0–12 Months
+Month-to-month,DSL,0–12 Months,690,293,397,42.46,Month-to-month | DSL | 0–12 Months
+Month-to-month,Fiber optic,25–48 Months,521,226,295,43.38,Month-to-month | Fiber optic | 25–48 Months
+Month-to-month,Fiber optic,13–24 Months,425,215,210,50.59,Month-to-month | Fiber optic | 13–24 Months
+Month-to-month,No,0–12 Months,388,88,300,22.68,Month-to-month | No | 0–12 Months
+Month-to-month,Fiber optic,49–72 Months,266,78,188,29.32,Month-to-month | Fiber optic | 49–72 Months
+One year,Fiber optic,49–72 Months,355,67,288,18.87,One year | Fiber optic | 49–72 Months
+Month-to-month,DSL,13–24 Months,232,55,177,23.71,Month-to-month | DSL | 13–24 Months
+Month-to-month,DSL,25–48 Months,227,36,191,15.86,Month-to-month | DSL | 25–48 Months
+One year,Fiber optic,25–48 Months,154,31,123,20.13,One year | Fiber optic | 25–48 Months
+Two year,Fiber optic,49–72 Months,393,28,365,7.12,Two year | Fiber optic | 49–72 Months
+One year,DSL,25–48 Months,241,22,219,9.13,One year | DSL | 25–48 Months
+One year,DSL,49–72 Months,208,13,195,6.25,One year | DSL | 49–72 Months
+One year,DSL,13–24 Months,79,11,68,13.92,One year | DSL | 13–24 Months
+Two year,DSL,49–72 Months,506,11,495,2.17,Two year | DSL | 49–72 Months
+Month-to-month,DSL,49–72 Months,74,10,64,13.51,Month-to-month | DSL | 49–72 Months
+Month-to-month,No,13–24 Months,80,8,72,10.0,Month-to-month | No | 13–24 Months
+One year,DSL,0–12 Months,42,7,35,16.67,One year | DSL | 0–12 Months
+One year,Fiber optic,13–24 Months,23,4,19,17.39,One year | Fiber optic | 13–24 Months
+One year,No,0–12 Months,75,4,71,5.33,One year | No | 0–12 Months
+Two year,Fiber optic,25–48 Months,35,3,32,8.57,Two year | Fiber optic | 25–48 Months
+Two year,No,49–72 Months,364,3,361,0.82,Two year | No | 49–72 Months
+One year,Fiber optic,0–12 Months,7,2,5,28.57,One year | Fiber optic | 0–12 Months
+Month-to-month,No,25–48 Months,54,2,52,3.7,Month-to-month | No | 25–48 Months
+One year,No,49–72 Months,71,2,69,2.82,One year | No | 49–72 Months
+One year,No,25–48 Months,123,2,121,1.63,One year | No | 25–48 Months
+Two year,No,25–48 Months,160,2,158,1.25,Two year | No | 25–48 Months
+Month-to-month,No,49–72 Months,2,1,1,50.0,Month-to-month | No | 49–72 Months
+Two year,DSL,25–48 Months,79,1,78,1.27,Two year | DSL | 25–48 Months
+One year,No,13–24 Months,95,1,94,1.05,One year | No | 13–24 Months
+Two year,DSL,0–12 Months,18,0,18,0.0,Two year | DSL | 0–12 Months
+Two year,DSL,13–24 Months,25,0,25,0.0,Two year | DSL | 13–24 Months
+Two year,Fiber optic,0–12 Months,0,0,0,0.0,Two year | Fiber optic | 0–12 Months
+Two year,Fiber optic,13–24 Months,1,0,1,0.0,Two year | Fiber optic | 13–24 Months
+Two year,No,0–12 Months,50,0,50,0.0,Two year | No | 0–12 Months
+Two year,No,13–24 Months,64,0,64,0.0,Two year | No | 13–24 Months

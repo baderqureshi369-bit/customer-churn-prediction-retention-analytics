@@ -1,0 +1,88 @@
+===========================================================================
+PHASE 1: DATA CLEANING & VALIDATION REPORT
+===========================================================================
+
+1. DATASET DIMENSIONS
+----------------------------------------
+Original Row Count:      7043
+Original Column Count:   21
+Final Row Count:         7043
+Final Column Count:      23 (Includes 2 new analytical features)
+
+2. DUPLICATE & INTEGRITY CHECKS
+----------------------------------------
+Duplicate Rows (Initial): 0
+Duplicate Rows (Final):   0
+Unique customerID Count:  7043 / 7043
+customerID Uniqueness:    PASSED (100% Unique Primary Key)
+Target 'Churn' Values:    ['No', 'Yes'] (Kept as 'Yes'/'No' for Power BI)
+
+3. MISSING VALUE AUDIT & TOTALCHARGES RESOLUTION
+----------------------------------------
+Initial Blank String Count in TotalCharges: 11
+Converted to NaN count:                     11
+Tenure distribution for NaN TotalCharges:   All 11 records have tenure == 0
+Decision & Action Taken:
+  - Customers with tenure == 0 have not yet completed a billing cycle.
+  - TotalCharges was imputed to 0.0 instead of dropping rows or using mean imputation.
+  - Preserved 100% of customer records (0 rows dropped).
+Final Missing Values Across All Columns:    0
+
+4. DATA TYPE AUDIT (BEFORE & AFTER)
+---------------------------------------------------------------------------
+Column Name               | Original Type      | Cleaned Type        
+---------------------------------------------------------------------------
+customerID                | str                | str                 
+gender                    | str                | str                 
+SeniorCitizen             | int64              | int64               
+Partner                   | str                | str                 
+Dependents                | str                | str                 
+tenure                    | int64              | int64               
+PhoneService              | str                | str                 
+MultipleLines             | str                | str                 
+InternetService           | str                | str                 
+OnlineSecurity            | str                | str                 
+OnlineBackup              | str                | str                 
+DeviceProtection          | str                | str                 
+TechSupport               | str                | str                 
+StreamingTV               | str                | str                 
+StreamingMovies           | str                | str                 
+Contract                  | str                | str                 
+PaperlessBilling          | str                | str                 
+PaymentMethod             | str                | str                 
+MonthlyCharges            | float64            | float64             
+TotalCharges              | str                | float64             
+Churn                     | str                | str                 
+Tenure_Group (New)        | N/A                | category            
+Monthly_Charge_Range (New) | N/A                | category            
+---------------------------------------------------------------------------
+
+5. NEW ANALYTICAL FEATURES CREATED
+----------------------------------------
+A. Tenure_Group:
+Tenure_Group
+49–72 Months    2239
+0–12 Months     2186
+25–48 Months    1594
+13–24 Months    1024
+
+B. Monthly_Charge_Range:
+Monthly_Charge_Range
+$70.01–$90     1844
+$90.01–$120    1739
+$0–$35         1735
+$35.01–$70     1725
+
+6. CATEGORICAL LABELS PRESERVATION
+----------------------------------------
+Verified valid categorical distinctions preserved:
+- MultipleLines:      ['No phone service', 'No', 'Yes']
+- InternetService:    ['DSL', 'Fiber optic', 'No']
+- OnlineSecurity:     ['No', 'Yes', 'No internet service']
+- TechSupport:        ['No', 'Yes', 'No internet service']
+
+7. OVERALL VALIDATION STATUS
+----------------------------------------
+Status: PASSED ALL CHECKS
+Raw data preserved untouched. Cleaned dataset ready for EDA, ML, and Power BI.
+===========================================================================

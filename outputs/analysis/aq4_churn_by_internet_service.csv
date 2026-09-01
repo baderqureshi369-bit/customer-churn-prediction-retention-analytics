@@ -1,0 +1,4 @@
+InternetService,Total_Customers,Churned_Customers,Retained_Customers,Churn_Rate_Pct
+Fiber optic,3096,1297,1799,41.89
+DSL,2421,459,1962,18.96
+No,1526,113,1413,7.4

@@ -1,0 +1,136 @@
+================================================================================
+CUSTOMER CHURN PREDICTION & RETENTION ANALYTICS (CCPRA)
+CLEANED FINAL PROJECT STRUCTURE
+================================================================================
+
+CCPRA Project/
+│
+├── .gitignore
+├── requirements.txt
+├── README.md
+├── PROJECT_STRUCTURE.txt
+│
+├── CCPRA_Customer_Churn_Analytics_FINAL.pbix
+├── CCPRA_Customer_Churn_Analytics_WORKING.pbix
+├── CCPRA_Customer_Churn_Analytics_BACKUP.pbix
+│
+├── data/
+│   ├── raw/
+│   │   └── original_dataset.csv
+│   ├── processed/
+│   │   └── cleaned_customer_churn.csv
+│   └── powerbi/
+│       ├── customer_churn_analytics.csv
+│       ├── customer_churn_data_dictionary.csv
+│       ├── risk_category_sort.csv
+│       └── retention_priority_sort.csv
+│
+├── src/
+│   ├── data_cleaning.py
+│   ├── exploratory_analysis.py
+│   ├── train_model.py
+│   └── generate_predictions.py
+│
+├── models/
+│   └── selected_churn_model.joblib
+│
+├── outputs/
+│   ├── data_cleaning_report.txt
+│   ├── eda_summary.txt
+│   ├── eda_validation_report.txt
+│   ├── analysis/     # 20 CSV analytical outputs
+│   │   ├── aq1_overall_churn.csv
+│   │   ├── aq2_churn_by_contract.csv
+│   │   ├── aq3_churn_by_tenure.csv
+│   │   ├── aq4_churn_by_device_protection.csv
+│   │   ├── aq4_churn_by_internet_service.csv
+│   │   ├── aq4_churn_by_online_backup.csv
+│   │   ├── aq4_churn_by_online_security.csv
+│   │   ├── aq4_churn_by_tech_support.csv
+│   │   ├── aq4_services_combined_summary.csv
+│   │   ├── aq5_churn_by_payment_method.csv
+│   │   ├── aq6_churn_by_monthly_charges.csv
+│   │   ├── aq7_total_charges_by_churn.csv
+│   │   ├── aq8_churn_by_dependents.csv
+│   │   ├── aq8_churn_by_gender.csv
+│   │   ├── aq8_churn_by_paperless_billing.csv
+│   │   ├── aq8_churn_by_partner.csv
+│   │   ├── aq8_churn_by_senior_citizen.csv
+│   │   ├── aq8_demographics_combined_summary.csv
+│   │   ├── aq9_contract_internet_combination.csv
+│   │   └── aq10_highest_churn_segments.csv
+│   ├── charts/       # 20 PNG charts
+│   │   ├── aq1_overall_churn.png
+│   │   ├── aq2_churn_by_contract.png
+│   │   ├── aq3_churn_by_tenure.png
+│   │   ├── aq4_churn_by_device_protection.png
+│   │   ├── aq4_churn_by_internet_service.png
+│   │   ├── aq4_churn_by_online_backup.png
+│   │   ├── aq4_churn_by_online_security.png
+│   │   ├── aq4_churn_by_tech_support.png
+│   │   ├── aq4_services_combined_summary.png
+│   │   ├── aq5_churn_by_payment_method.png
+│   │   ├── aq6_churn_by_monthly_charges.png
+│   │   ├── aq7_total_charges_by_churn.png
+│   │   ├── aq8_churn_by_dependents.png
+│   │   ├── aq8_churn_by_gender.png
+│   │   ├── aq8_churn_by_paperless_billing.png
+│   │   ├── aq8_churn_by_partner.png
+│   │   ├── aq8_churn_by_senior_citizen.png
+│   │   ├── aq8_demographics_combined_summary.png
+│   │   ├── aq9_contract_internet_combination.png
+│   │   └── aq10_highest_churn_segments.png
+│   ├── model_results/
+│   │   ├── logistic_regression_classification_report.txt
+│   │   ├── logistic_regression_confusion_matrix.png
+│   │   ├── logistic_regression_metrics.csv
+│   │   ├── model_comparison.csv
+│   │   ├── model_selection_explanation.txt
+│   │   ├── phase3_validation_report.txt
+│   │   ├── random_forest_classification_report.txt
+│   │   ├── random_forest_confusion_matrix.png
+│   │   ├── random_forest_feature_importance.csv
+│   │   ├── random_forest_feature_importance_top15.png
+│   │   ├── random_forest_metrics.csv
+│   │   └── roc_curve_comparison.png
+│   └── predictions/
+│       ├── phase4_prediction_summary.txt
+│       └── phase4_validation_report.txt
+│
+├── tools/
+│   └── archive_powerbi_automation/
+│       ├── assemble_pbir_pbix.py
+│       ├── backup_model.ps1
+│       ├── build_powerbi_model.py
+│       ├── check_cmdline.ps1
+│       ├── check_desktop_windows.ps1
+│       ├── check_env.ps1
+│       ├── check_pbi_windows.ps1
+│       ├── check_workspace.ps1
+│       ├── create_dashboard.py
+│       ├── deploy_model.ps1
+│       ├── examine_pbix.py
+│       ├── generate_pbir_definition.py
+│       ├── generate_report_layout.py
+│       ├── inject_report_layout.py
+│       ├── inspect_model_storage.py
+│       ├── powerbi_model.tmsl.json
+│       ├── powerbi_refresh.tmsl.json
+│       ├── query_compat.ps1
+│       ├── query_model.ps1
+│       ├── report_layout.json
+│       ├── report_layout_utf16.bin
+│       ├── save_pbi.ps1
+│       ├── scratch_inspect.py
+│       ├── verify_data_step1.py
+│       ├── verify_pbir_definition.py
+│       └── verify_pbir_pbix.py
+│
+└── archive/
+    ├── original_download/
+    │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
+    └── pbix_versions/
+        ├── CCPRA_Customer_Churn_Analytics_TEST.pbix
+        └── CCPRA_Customer_Churn_Analytics.pbix
+
+================================================================================
